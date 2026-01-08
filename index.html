@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Elemental Link</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            },
+            animation: {
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'shine': 'shine 2s linear infinite',
+              'blob': 'blob 4s infinite',
+              'spin-slow': 'spin 8s linear infinite',
+              'spin-super-fast': 'spin 0.5s linear infinite',
+              'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'implode': 'implode 2s infinite',
+              'fever-bg': 'fever-bg 0.5s linear infinite',
+              'rainbow-rush': 'rainbow-rush 2s linear infinite',
+              'tremble': 'tremble 0.1s linear infinite',
+              'heartbeat': 'heartbeat 0.4s ease-in-out infinite',
+              'pop-in': 'pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+              'bounce-text': 'bounce-text 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              'jelly': 'jelly 0.4s cubic-bezier(0.25, 1, 0.5, 1)',
+              'flow': 'flow 0.5s linear infinite',
+              'speed-lines': 'speed-lines 0.2s steps(2) infinite',
+              'blink': 'blink 4s infinite',
+              'creature-bounce': 'creature-bounce 2s ease-in-out infinite',
+              'creature-dance': 'creature-dance 0.4s ease-in-out infinite alternate',
+              'squash': 'squash 0.3s cubic-bezier(0.25, 1.5, 0.5, 1)',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              shine: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' },
+              },
+              blob: {
+                '0%': { transform: 'scale(1) translate(0, 0)', borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+                '50%': { transform: 'scale(1.05) translate(2px, -2px)', borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+                '100%': { transform: 'scale(1) translate(0, 0)', borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+              },
+              'pulse-glow': {
+                '0%, 100%': { opacity: 1, transform: 'scale(1)', filter: 'brightness(1)' },
+                '50%': { opacity: .8, transform: 'scale(0.95)', filter: 'brightness(1.2)' },
+              },
+              implode: {
+                 '0%': { transform: 'scale(1)', filter: 'brightness(1)' },
+                 '50%': { transform: 'scale(0.8)', filter: 'brightness(0.5)' },
+                 '100%': { transform: 'scale(1)', filter: 'brightness(1)' },
+              },
+              'fever-bg': {
+                '0%': { boxShadow: 'inset 0 0 20px #a855f7' },
+                '25%': { boxShadow: 'inset 0 0 40px #ec4899' },
+                '50%': { boxShadow: 'inset 0 0 20px #eab308' },
+                '75%': { boxShadow: 'inset 0 0 40px #3b82f6' },
+                '100%': { boxShadow: 'inset 0 0 20px #a855f7' },
+              },
+              'rainbow-rush': {
+                '0%': { backgroundPosition: '0% 50%' },
+                '100%': { backgroundPosition: '100% 50%' },
+              },
+              tremble: {
+                '0%': { transform: 'translate(1px, 1px) rotate(0deg)' },
+                '25%': { transform: 'translate(-1px, -2px) rotate(-1deg)' },
+                '50%': { transform: 'translate(-3px, 0px) rotate(1deg)' },
+                '75%': { transform: 'translate(3px, 2px) rotate(0deg)' },
+                '100%': { transform: 'translate(1px, -1px) rotate(1deg)' },
+              },
+              heartbeat: {
+                '0%': { transform: 'scale(1)' },
+                '25%': { transform: 'scale(1.02)' },
+                '50%': { transform: 'scale(1)' },
+                '75%': { transform: 'scale(1.01)' },
+                '100%': { transform: 'scale(1)' },
+              },
+              'pop-in': {
+                '0%': { opacity: 0, transform: 'scale(0)' },
+                '100%': { opacity: 1, transform: 'scale(1)' }
+              },
+              'bounce-text': {
+                '0%': { transform: 'translate(-50%, -50%) scale(0.5)' },
+                '50%': { transform: 'translate(-50%, -50%) scale(1.2)' },
+                '100%': { transform: 'translate(-50%, -50%) scale(1)' }
+              },
+              'jelly': {
+                '0%': { transform: 'scale(0.9, 1.1)' },
+                '30%': { transform: 'scale(1.15, 0.85)' },
+                '50%': { transform: 'scale(0.95, 1.05)' },
+                '70%': { transform: 'scale(1.05, 0.95)' },
+                '100%': { transform: 'scale(1, 1)' }
+              },
+              'flow': {
+                '0%': { strokeDashoffset: '20' },
+                '100%': { strokeDashoffset: '0' }
+              },
+              'speed-lines': {
+                '0%': { opacity: 0.3, transform: 'scale(1)' },
+                '50%': { opacity: 0.6, transform: 'scale(1.1)' },
+                '100%': { opacity: 0.3, transform: 'scale(1)' }
+              },
+              'blink': {
+                '0%, 48%, 52%, 100%': { transform: 'scaleY(1)' },
+                '50%': { transform: 'scaleY(0.1)' }
+              },
+              'creature-bounce': {
+                '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                '50%': { transform: 'translateY(-3px) scale(1.02, 0.98)' }
+              },
+              'creature-dance': {
+                 '0%': { transform: 'translateY(0) scale(1.05, 0.95) rotate(-3deg)' },
+                 '50%': { transform: 'translateY(-4px) scale(0.95, 1.05) rotate(0deg)' },
+                 '100%': { transform: 'translateY(0) scale(1.05, 0.95) rotate(3deg)' }
+              },
+              'squash': {
+                '0%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.2, 0.8)' },
+                '100%': { transform: 'scale(1)' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #020617; /* Darker background for contrast */
+        overflow: hidden;
+        touch-action: none; 
+      }
+      /* Juice: Screen Shake Class */
+      .shake {
+        animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+      }
+      .shake-hard {
+        animation: shake-hard 0.2s cubic-bezier(.36,.07,.19,.97) infinite;
+      }
+      @keyframes shake {
+        10%, 90% { transform: translate3d(-1px, 0, 0); }
+        20%, 80% { transform: translate3d(2px, 0, 0); }
+        30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+        40%, 60% { transform: translate3d(4px, 0, 0); }
+      }
+      @keyframes shake-hard {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+      
+      /* Fever Effects */
+      .chromatic-aberration {
+        animation: glitch 0.2s infinite;
+      }
+      @keyframes glitch {
+        0% { text-shadow: 3px 0 rgba(255,0,0,0.7), -3px 0 rgba(0,0,255,0.7); }
+        25% { text-shadow: -3px 0 rgba(255,0,0,0.7), 3px 0 rgba(0,0,255,0.7); }
+        50% { text-shadow: 3px 0 rgba(0,255,0,0.7), -3px 0 rgba(255,0,255,0.7); }
+        75% { text-shadow: -3px 0 rgba(0,255,0,0.7), 3px 0 rgba(255,0,255,0.7); }
+        100% { text-shadow: 3px 0 rgba(255,0,0,0.7), -3px 0 rgba(0,0,255,0.7); }
+      }
+
+      /* Speed Lines Overlay */
+      .bg-speed-lines {
+          background-image: repeating-conic-gradient(transparent 0 15deg, rgba(255, 255, 255, 0.1) 15deg 30deg);
+          mask-image: radial-gradient(circle, transparent 30%, black 100%);
+          -webkit-mask-image: radial-gradient(circle, transparent 30%, black 100%);
+      }
+
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #1e293b; }
+      ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "uuid": "https://esm.sh/uuid@^13.0.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
