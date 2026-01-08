@@ -8,6 +8,26 @@ This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1kKhw1_X87YopQw9bHpN9mMvjtvP5r8YO
 
+## Play on itch.io
+
+https://theillusionoflife.itch.io/elemental-spirits
+
+## Video (YouTube Shorts)
+
+<div align="center">
+  <iframe
+    width="315"
+    height="560"
+    src="https://www.youtube.com/embed/DQfEhFbAXWA"
+    title="Elemental Spirits - Gameplay Short"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+
+If the embed does not load, watch here: https://youtube.com/shorts/DQfEhFbAXWA
+
 ## Run Locally
 
 **Prerequisites:**  Node.js
