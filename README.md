@@ -1,6 +1,6 @@
 ## Play on itch.io
 
-https://theillusionoflife.itch.io/elemental-spirits
+<https://theillusionoflife.itch.io/elemental-spirits>
 
 ## Video (YouTube Shorts)
 
@@ -16,4 +16,4 @@ https://theillusionoflife.itch.io/elemental-spirits
   ></iframe>
 </div>
 
-If the embed does not load, watch here: https://youtube.com/shorts/DQfEhFbAXWA
+If the embed does not load, watch here: <https://youtube.com/shorts/DQfEhFbAXWA>
